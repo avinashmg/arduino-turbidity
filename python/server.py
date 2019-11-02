@@ -4,14 +4,11 @@ from time import sleep
 import serial
 
 ser = serial.Serial('com3', 9600) # Establish the connection on a specific port
-counter = 32 # Below 32 everything in ASCII is gibberish
 PORT_NUMBER = 8080
 
 #Sensor sensor
 def sensor_output():
     output = ser.readline() # Read the newest output from the Arduino
-    if counter == 255:
-        counter = 32
     return output
 
 #This class will handles any incoming request from
